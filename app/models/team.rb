@@ -1,6 +1,6 @@
-class Team
+class Team < ActiveRecord::Base
 
-  attr_accessor :name, :motto, :members
+  has_many :heroes
 
   def initialize(params)
     @name = params[:team][:name]
