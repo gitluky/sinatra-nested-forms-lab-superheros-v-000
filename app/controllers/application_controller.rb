@@ -20,7 +20,7 @@ class App < Sinatra::Base
       params[:team][:heroes].each do |hero_data|
         new_hero = Hero.create(hero_data)
         binding.pry
-        Hero.team_id = @team.id
+        new_hero.team_id = @team.id
       end
       @heroes = Hero.all
       erb :team
