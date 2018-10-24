@@ -6,8 +6,14 @@ class App < Sinatra::Base
     set :views, Proc.new { File.join(root, "../views/") }
 
     get '/' do
+
       erb :index
     end
+
+    # post '/team' do
+    #   @team = Team.new(params)
+    #   erb :team
+    # end
 
     post '/team' do
       @team = Team.create(name: params[:team][:name], motto: params[:team][:motto])
@@ -18,7 +24,6 @@ class App < Sinatra::Base
       @heroes = Hero.all
       erb :team
     end
-
 
 
 end
