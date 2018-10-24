@@ -1,4 +1,4 @@
-class Hero
+class Hero < ActiveRecord::Base
   belongs_to :team
 
 
