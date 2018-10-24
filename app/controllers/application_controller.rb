@@ -15,7 +15,7 @@ class App < Sinatra::Base
         new_hero = Hero.create(hero_data)
         Hero.team_id = @team.id
       end
-      @hero = Hero.all
+      @heroes = Hero.all
       erb :team
     end
 
