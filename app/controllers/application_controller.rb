@@ -19,7 +19,7 @@ class App < Sinatra::Base
       @team = Team.create(name: params[:team][:name], motto: params[:team][:motto])
       params[:team][:heroes].each do |hero_data|
         new_hero = Hero.create(hero_data)
-        new_hero.team_id = @team.id
+        new_hero.update(team_id: @team.id)
       end
       @heroes = Hero.all
       erb :team
