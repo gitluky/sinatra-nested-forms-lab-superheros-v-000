@@ -1,7 +1,6 @@
 class Hero < ActiveRecord::Base
 
-  attr_accessor :name, :power, :bio
-  @@all = []
+  belongs_to :team
 
   def initialize(args)
     @name = args[:name]
